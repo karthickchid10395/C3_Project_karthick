@@ -18,7 +18,6 @@ public class Restaurant {
     }
 
     public boolean isRestaurantOpen() {
-        //DELETE ABOVE STATEMENT AND WRITE CODE HERE
         LocalTime currentTime = getCurrentTime();
         System.out.print("Current Time is "+currentTime);
         if(currentTime.isAfter(openingTime) && currentTime.isBefore(closingTime) ||
@@ -31,7 +30,6 @@ public class Restaurant {
     public LocalTime getCurrentTime(){ return  LocalTime.now(); }
 
     public List<Item> getMenu() {
-        //DELETE ABOVE RETURN STATEMENT AND WRITE CODE HERE
         return menu;
     }
 

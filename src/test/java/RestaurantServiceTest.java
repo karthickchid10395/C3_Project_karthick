@@ -9,7 +9,6 @@ class RestaurantServiceTest {
 
     RestaurantService service = new RestaurantService();
     Restaurant restaurant;
-    //REFACTOR ALL THE REPEATED LINES OF CODE
 
     @BeforeEach
     public void getRestaurantDetails(){
@@ -23,15 +22,12 @@ class RestaurantServiceTest {
     //>>>>>>>>>>>>>>>>>>>>>>SEARCHING<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
     public void searching_for_existing_restaurant_should_return_expected_restaurant_object() throws restaurantNotFoundException {
-        //WRITE UNIT TEST CASE HERE
         restaurant = service.findRestaurantByName("Amelie's cafe");
         assertNotNull(restaurant);
     }
 
-    //You may watch the video by Muthukumaran on how to write exceptions in Course 3: Testing and Version control: Optional content
     @Test
     public void searching_for_non_existing_restaurant_should_throw_exception() throws restaurantNotFoundException {
-        //WRITE UNIT TEST CASE HERE
         restaurant = service.findRestaurantByName("Amelie cafe");
         assertThrows(restaurantNotFoundException.class,() -> {
             if(restaurant == null){
