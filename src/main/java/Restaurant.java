@@ -69,4 +69,18 @@ public class Restaurant {
         return name;
     }
 
+    public Integer getTotalOrderValue(List<String> names){
+        if(menu.size() > 0){
+            Integer price = 0;
+            for(String value:names){
+                for(Item item:menu){
+                    if(item.getName().equalsIgnoreCase(value)){
+                        price = price + item.getPrice();
+                    }
+                }
+            }
+            return price;
+        }
+        return 0;
+    }
 }
