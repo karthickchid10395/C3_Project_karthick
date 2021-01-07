@@ -7,6 +7,7 @@ import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -70,7 +71,14 @@ class RestaurantTest {
 
     @Test
     public void when_selecting_items_order_price_should_be_returned(){
-        Integer totalPrice = restaurant.getTotalOrderValue(restaurant.getMenu());
+
+        restaurant.addToMenu("Sizzling brownie",319);
+
+        List<String> itemNames = new ArrayList<>();
+        itemNames.add("Sweet corn soup");
+        itemNames.add("Vegetable lasagne");
+
+        Integer totalPrice = restaurant.getTotalOrderValue(itemNames);
         assertEquals(388,totalPrice);
     }
 }
